@@ -1,0 +1,672 @@
+/* ==========================================
+   DESA PONDOK V5 PREMIUM
+========================================== */
+
+:root{
+    --primary:#55C4E8;
+    --secondary:#D4A017;
+    --dark:#003366;
+    --light:#ffffff;
+    --gray:#f5f7fa;
+    --text:#444;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff;
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.spinner{
+    width:60px;
+    height:60px;
+    border:6px solid #eee;
+    border-top:6px solid var(--primary);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:#fff;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.nav-container{
+    width:90%;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:60px;
+}
+
+.logo h3{
+    color:var(--dark);
+    margin:0;
+}
+
+.logo small{
+    color:#666;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:var(--dark);
+    font-weight:600;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--secondary);
+}
+
+.menu a.active{
+    color:var(--secondary);
+}
+
+#menuToggle{
+    display:none;
+}
+
+/* ==========================================
+   RUNNING TEXT
+========================================== */
+
+.running-text{
+    background:var(--dark);
+    color:white;
+    padding:8px;
+    font-size:14px;
+}
+
+/* ==========================================
+   HERO SLIDER
+========================================== */
+
+.hero-slider{
+    height:90vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:1s;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+
+.hero-content{
+    position:absolute;
+    inset:0;
+    background:rgba(0,51,102,.55);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+.hero-content p{
+    font-size:20px;
+}
+
+.btn-jelajah{
+    margin-top:20px;
+    background:var(--secondary);
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+}
+
+/* ==========================================
+   SLIDER BUTTON
+========================================== */
+
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.8);
+    cursor:pointer;
+    z-index:10;
+    font-size:20px;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+/* ==========================================
+   DOT
+========================================== */
+
+.slider-dots{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:white;
+    opacity:.5;
+    cursor:pointer;
+}
+
+.dot.active{
+    opacity:1;
+    background:var(--secondary);
+}
+
+/* ==========================================
+   PAGE BANNER
+========================================== */
+
+.page-banner{
+    background:
+    linear-gradient(
+        rgba(0,51,102,.75),
+        rgba(0,51,102,.75)
+    ),
+    url('../assets/balai-desa.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    padding:100px 20px;
+    text-align:center;
+    color:white;
+}
+
+.page-banner h1{
+    font-size:48px;
+}
+
+.page-banner p{
+    margin-top:10px;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.content-page{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:80px 0;
+}
+
+.content-page h2{
+    color:var(--dark);
+    margin-bottom:20px;
+}
+
+/* ==========================================
+   STATISTIK
+========================================== */
+
+.statistik{
+    width:90%;
+    margin:auto;
+    padding:80px 0;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.card-stat{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card-stat i{
+    color:var(--primary);
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card-stat h2{
+    color:var(--dark);
+}
+
+/* ==========================================
+   POTENSI
+========================================== */
+
+.potensi-section{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.potensi-card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.potensi-card:hover{
+    transform:translateY(-8px);
+}
+
+.potensi-card i{
+    font-size:50px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* ==========================================
+   BERITA
+========================================== */
+
+.berita-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.berita-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.berita-card img{
+    height:220px;
+    width:100%;
+    object-fit:cover;
+}
+
+.berita-content{
+    padding:20px;
+}
+
+/* ==========================================
+   PERANGKAT DESA
+========================================== */
+
+.perangkat-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.perangkat-card{
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+}
+
+.perangkat-card:hover{
+    transform:translateY(-10px);
+}
+
+.perangkat-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    object-position:top center;
+}
+
+.perangkat-card h3{
+    margin-top:20px;
+    color:#0b3c78;
+    font-size:22px;
+    font-weight:700;
+}
+
+.perangkat-card p{
+    color:#666;
+    padding-bottom:25px;
+}
+
+/* ==========================================
+   DOWNLOAD
+========================================== */
+
+.download-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.download-card{
+    background:white;
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.download-btn{
+    display:inline-block;
+    padding:10px 20px;
+    background:var(--secondary);
+    color:white;
+    border-radius:10px;
+}
+
+/* ==========================================
+   KONTAK
+========================================== */
+
+.contact-card{
+    background:white;
+    text-align:center;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.contact-card i{
+    font-size:45px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* ==========================================
+   LIGHTBOX
+========================================== */
+
+#lightbox{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+}
+
+.close-lightbox{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:var(--dark);
+    color:white;
+    margin-top:80px;
+}
+
+.footer-container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+}
+
+/* ==========================================
+   WHATSAPP
+========================================== */
+
+.wa-button{
+    position:fixed;
+    right:20px;
+    bottom:90px;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    z-index:999;
+}
+
+/* ==========================================
+   BACK TO TOP
+========================================== */
+
+#topBtn{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    color:white;
+
+    cursor:pointer;
+
+    display:none;
+}
+
+
+/* ==========================================
+   kegiatan mendatang
+========================================== */
+
+.event-section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 20px;
+}
+
+.event-card{
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:30px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.event-card:hover{
+    transform:translateY(-5px);
+}
+
+.event-card img{
+    width:280px;
+    height:220px;
+    object-fit:cover;
+}
+
+.event-content{
+    flex:1;
+    padding:20px;
+}
+
+.event-content h3{
+    font-size:32px;
+    color:#0b3c78;
+    margin-bottom:15px;
+}
+
+.event-content p{
+    margin-bottom:10px;
+    color:#666;
+}
+
+.btn-detail{
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:10px 20px;
+
+    background:#0b3c78;
+
+    color:white;
+
+    border-radius:8px;
+
+    text-decoration:none;
+}
