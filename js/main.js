@@ -140,65 +140,6 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* ===================================
-   LIGHTBOX GALERI
-=================================== */
-
-const galleryImages =
-document.querySelectorAll(".gallery-item img");
-
-const lightbox =
-document.getElementById("lightbox");
-
-const lightboxImg =
-document.getElementById("lightbox-img");
-
-if(galleryImages.length > 0){
-
-    galleryImages.forEach(img => {
-
-        img.addEventListener("click", () => {
-
-            if(lightbox){
-
-                lightbox.style.display = "flex";
-
-                lightboxImg.src = img.src;
-
-            }
-
-        });
-
-    });
-
-}
-
-const closeLightbox =
-document.querySelector(".close-lightbox");
-
-if(closeLightbox){
-
-    closeLightbox.addEventListener("click", () => {
-
-        lightbox.style.display = "none";
-
-    });
-
-}
-
-if(lightbox){
-
-    lightbox.addEventListener("click", (e) => {
-
-        if(e.target === lightbox){
-
-            lightbox.style.display = "none";
-
-        }
-
-    });
-
-}
 
 
 /* ===================================
